@@ -7,7 +7,9 @@ class CategoryInline(admin.TabularInline):
 
 
 class PostAdmin(admin.ModelAdmin):
-    inlines = [CategoryInline, ]
+    inlines = [
+        CategoryInline,
+    ]
 
 
 class CategoryAdmin(admin.ModelAdmin):
