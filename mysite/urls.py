@@ -21,14 +21,11 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 from rest_framework import routers
 from quickstart import views
+from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-
-router.register(r'posts', views.PostViewSet)
-router.register(r'categories', views.CategoryViewSet)
-
 
 urlpatterns = [
     path("", include("blogging.urls")),
