@@ -19,13 +19,16 @@ from django.urls import path
 from django.urls.conf import include
 from django.contrib.auth.views import LoginView, LogoutView
 
-from rest_framework import routers
 from quickstart import views
 from rest_framework import routers
+from blogging.views import PostViewSet
 
 router = routers.DefaultRouter()
 router.register(r"users", views.UserViewSet)
 router.register(r"groups", views.GroupViewSet)
+
+router.register(r"posts", PostViewSet)
+
 
 urlpatterns = [
     path("", include("blogging.urls")),
